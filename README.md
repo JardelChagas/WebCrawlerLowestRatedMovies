@@ -5,3 +5,5 @@
 - Diretor(es)
 - Elenco principal
 - Ao menos um comentário POSITIVO sobre o filme (comentário que deu uma nota >= 5) 
+
+## Dependências 
