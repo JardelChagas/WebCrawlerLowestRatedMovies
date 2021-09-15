@@ -37,8 +37,16 @@ public class Filme {
         this.nota = nota;
     }
 
-    public List<String> getDiretores() {
-        return diretores;
+    public String getDiretores() {
+        String t ="";
+        for (String d: diretores){
+            if(t.equals(""))
+                t= d;
+            else
+                t+=", "+d;
+        }
+
+        return t;
     }
 
     public void setDiretores(List<String> diretores) {
@@ -69,6 +77,6 @@ public class Filme {
                 ", diretores=" + diretores +
                 ", elencoPrincipal=" + elencoPrincipal +
                 ", comentarioPositivo=" + comentarioPositivo +
-                "}\n";
+                "}";
     }
 }
