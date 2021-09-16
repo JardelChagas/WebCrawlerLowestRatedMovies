@@ -8,6 +8,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -31,32 +32,24 @@ public class WebScraping {
 
         String t="";
         List<String> hrefs = getListOfLinkTop10(trFilms);
+        System.out.println(hrefs);
         for(int i=0; i < 10; i++){
             Filme f = new Filme();
-            List<String> diretores = new ArrayList<>();
+            f.setName(getName(hrefs.get(i)));
 
-            f.setNome(getName(hrefs.get(i)));
-
-
-            Document d2 = this.createNewDoc(hrefs.get(i));
-            Element ul = d2.getElementsByClass("ipc-metadata-list ipc-metadata-list--dividers-all StyledComponents__CastMetaDataList-y9ygcu-10 cbPPkN ipc-metadata-list--base").first();
-            Element div = ul.getElementsByTag("div").first();
-            Elements ul2 = div.getElementsByTag("li");
-
-            for(Element u: ul2){
-                diretores.add(u.text());
-
-            }
-
-            f.setDiretores(diretores);
             List<Element> att = trFilms.get(i).getElementsByTag("td");
+            f.setNote(Float.parseFloat(att.get(2).text()));
 
-           // att.get(1).text());
-            f.setNota(Float.parseFloat(att.get(2).text()));
+            f.setDirectors(getDirector(hrefs.get(i)));
+            f.setMainCast(getMainCast(hrefs.get(i)));
+            getPositiveComment(hrefs.get(i));
+            //f.setPositiveComment();reviews-header
             films.add(f);
         }
         return films;
     }
+
+
 
 
     private List<String> getListOfLinkTop10(List<Element> trFilms){
@@ -64,8 +57,8 @@ public class WebScraping {
         for(int i=0; i < 10; i++){
             Element e = trFilms.get(i).getElementsByTag("a").first();
             hrefs.add("https://www.imdb.com"+e.attr("href"));
-            System.out.println("--"+hrefs.get(i)+"--");
         }
+        Collections.reverse(hrefs);
         return hrefs;
     }
 
@@ -88,6 +81,8 @@ public class WebScraping {
         return "https://www.imdb.com"+a.attr("href");
     }
 
+
+
     private String getName(String url){
         Document d = this.createNewDoc(this.getLinkElement(url));
         Element table = d.getElementsByTag("table").last();
@@ -100,6 +95,53 @@ public class WebScraping {
         }
         return "";
     }
+
+    private List<String> getDirector(String url){
+        List<String> diretores = new ArrayList<>();
+
+        Document d = this.createNewDoc(url);
+        Element ul = d.getElementsByClass("ipc-metadata-list ipc-metadata-list--dividers-all StyledComponents__CastMetaDataList-y9ygcu-10 cbPPkN ipc-metadata-list--base").first();
+        Element div = ul.getElementsByTag("div").first();
+        Elements ul2 = div.getElementsByTag("li");
+
+        for(Element u: ul2){
+            diretores.add(u.text());
+        }
+
+        return diretores;
+    }
+
+    private List<String> getMainCast(String url) {
+        List<String> mainCast = new ArrayList<>();
+        Document d = this.createNewDoc(url);
+        //Elements section = d.getElementsByClass("ipc-sub-grid ipc-sub-grid--page-span-2 ipc-sub-grid--wraps-at-above-l ipc-shoveler__grid");//select("section[data-testid='title-cast']").first();
+        Elements a = d.select("a[data-testid='title-cast-item__actor']");//.first();
+        a.forEach(b->{
+            mainCast.add(b.text());
+        });
+        System.out.println("----------------------------");
+        return mainCast;
+    }
+
+    private List<String> getPositiveComment(String url) {
+        List<String> positiveComment = new ArrayList<>();
+        Document d = this.createNewDoc(url);
+        Element e = d.select("div[data-testid='reviews-header']").first();
+        Element f = e.getElementsByTag("a").first();
+
+        System.out.println("https://www.imdb.com"+f.attr("href"));
+
+        return positiveComment;
+    }
+
+
+
+
+
+
+
+
+
 
 
 

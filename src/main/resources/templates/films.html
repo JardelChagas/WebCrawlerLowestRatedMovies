@@ -25,19 +25,19 @@
     <tbody>
     <tr th:each="film : ${films}">
         <td>
-            <samp th:text="${film.nome}"></samp>
+            <samp th:text="${film.name}"></samp>
         </td>
         <td >
-            <samp th:text="${film.nota}"></samp>
+            <samp th:text="${film.note}"></samp>
         </td>
         <td>
-            <samp th:text="${film.diretores}"></samp>
+            <samp th:text="${film.directors}"></samp>
         </td>
         <td>
-            <samp th:text="${film.elencoPrincipal}"></samp>
+            <samp th:text="${film.mainCast}"></samp>
         </td>
         <td>
-            <samp th:text="${film.comentarioPositivo}"></samp>
+            <samp th:text="${film.positiveComment}"></samp>
         </td>
     </tr>
     </tbody>

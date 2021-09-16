@@ -4,79 +4,77 @@ import java.util.List;
 
 public class Filme {
     public  Filme(){}
-    public  Filme(String nome, float nota, List<String> diretores, List<String> elencoPrincipal, List<String> comentarioPositivo){
-        this.nome = nome;
-        this.nota = nota;
-        this.diretores = diretores;
-        this.elencoPrincipal = elencoPrincipal;
-        this.comentarioPositivo = comentarioPositivo;
-    }
-    public  Filme(String nome){this.nome = nome;}
-
-    private String nome;
-    private float nota;
-    private List<String> diretores;
-    private List<String> elencoPrincipal;
-    private List<String> comentarioPositivo;
-
-
-
-    public String getNome() {
-        return nome;
+    public  Filme(String name, float note, List<String> directors, List<String> mainCast, List<String> positiveComment){
+        this.name = name;
+        this.note = note;
+        this.directors = directors;
+        this.mainCast = mainCast;
+        this.positiveComment = positiveComment;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    private String name;
+    private float note;
+    private List<String> directors;
+    private List<String> mainCast;
+    private List<String> positiveComment;
+
+
+    public String getName() {
+        return name;
     }
 
-    public float getNota() {
-        return nota;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setNota(float nota) {
-        this.nota = nota;
+    public float getNote() {
+        return note;
     }
 
-    public String getDiretores() {
-        String t ="";
-        for (String d: diretores){
-            if(t.equals(""))
-                t= d;
+    public void setNote(float note) {
+        this.note = note;
+    }
+
+    public String getDirectors() {
+        String directors = "";
+        for (String d: this.directors){
+            if(directors.equals(""))
+                directors = d;
             else
-                t+=", "+d;
+                directors += ", " + d;
         }
 
-        return t;
+        return directors;
     }
 
-    public void setDiretores(List<String> diretores) {
-        this.diretores = diretores;
+    public void setDirectors(List<String> directors) {
+        this.directors = directors;
     }
 
-    public List<String> getElencoPrincipal() {
-        return elencoPrincipal;
+    public List<String> getMainCast() {
+        return mainCast;
     }
 
-    public void setElencoPrincipal(List<String> elencoPrincipal) {
-        this.elencoPrincipal = elencoPrincipal;
+    public void setMainCast(List<String> mainCast) {
+        this.mainCast = mainCast;
     }
 
-    public List<String> getComentarioPositivo() {
-        return comentarioPositivo;
+    public List<String> getPositiveComment() {
+        return positiveComment;
     }
 
-    public void setComentarioPositivo(List<String> comentarioPositivo) {
-        this.comentarioPositivo = comentarioPositivo;
+    public void setPositiveComment(List<String> positiveComment) {
+        this.positiveComment = positiveComment;
     }
 
     @Override
     public String toString() {
         return "Filme{" +
-                "nome='" + nome + '\'' +
-                ", nota=" + nota +
-                ", diretores=" + diretores +
-                ", elencoPrincipal=" + elencoPrincipal +
-                ", comentarioPositivo=" + comentarioPositivo +
+                "nome='" + name + '\'' +
+                ", nota=" + note +
+                ", diretores=" + directors +
+                ", elencoPrincipal=" + mainCast +
+                ", comentarioPositivo=" + positiveComment +
                 "}";
     }
 }
