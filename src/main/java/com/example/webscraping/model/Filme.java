@@ -16,7 +16,26 @@ public class Filme {
     private float note;
     private List<String> directors;
     private List<String> mainCast;
+    private List<String> titleComment;
     private List<String> positiveComment;
+
+    public String getTitleComment() {
+        String titleComment = "";
+        if(this.titleComment != null)
+            for(String tc: this.titleComment){
+                if(titleComment.equals(""))
+                    titleComment = tc;
+                else
+                    titleComment += ", "+tc;
+            }
+        return titleComment;
+    }
+
+    public void setTitleComment(List<String> titleComment) {
+        this.titleComment = titleComment;
+    }
+
+
 
 
     public String getName() {
@@ -37,12 +56,13 @@ public class Filme {
 
     public String getDirectors() {
         String directors = "";
-        for (String d: this.directors){
-            if(directors.equals(""))
-                directors = d;
-            else
-                directors += ", " + d;
-        }
+        if(this.directors != null)
+            for (String d: this.directors){
+                if(directors.equals(""))
+                    directors = d;
+                else
+                    directors += ", " + d;
+            }
 
         return directors;
     }
@@ -51,7 +71,16 @@ public class Filme {
         this.directors = directors;
     }
 
-    public List<String> getMainCast() {
+    public String getMainCast() {
+        String mainCast = "";
+        if(this.mainCast != null)
+            for(String mc: this.mainCast){
+                if(mainCast.equals(""))
+                    mainCast = mc;
+                else
+                    mainCast += ", "+mc;
+            }
+
         return mainCast;
     }
 
@@ -59,7 +88,15 @@ public class Filme {
         this.mainCast = mainCast;
     }
 
-    public List<String> getPositiveComment() {
+    public String getPositiveComment() {
+        String positiveComment = "";
+        if(this.positiveComment != null)
+            for(String pc: this.positiveComment){
+                if(positiveComment.equals(""))
+                    positiveComment = pc;
+                else
+                    positiveComment += ", "+pc;
+            }
         return positiveComment;
     }
 

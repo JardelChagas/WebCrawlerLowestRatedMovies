@@ -2,6 +2,7 @@ package com.example.webscraping.controller;
 
 import com.example.webscraping.domain.WebScraping;
 import com.example.webscraping.model.Filme;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
