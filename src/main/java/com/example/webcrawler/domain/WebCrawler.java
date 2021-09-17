@@ -1,6 +1,6 @@
-package com.example.webscraping.domain;
+package com.example.webcrawler.domain;
 
-import com.example.webscraping.model.Film;
+import com.example.webcrawler.model.Film;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

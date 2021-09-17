@@ -1,7 +1,7 @@
-package com.example.webscraping.controller;
+package com.example.webcrawler.controller;
 
-import com.example.webscraping.domain.WebCrawler;
-import com.example.webscraping.model.Film;
+import com.example.webcrawler.domain.WebCrawler;
+import com.example.webcrawler.model.Film;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

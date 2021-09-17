@@ -1,4 +1,4 @@
-package com.example.webscraping;
+package com.example.webcrawler;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.example.webscraping;
+package com.example.webcrawler;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
