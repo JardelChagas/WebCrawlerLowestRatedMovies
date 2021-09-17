@@ -5,3 +5,9 @@
 - Diretor(es)
 - Elenco principal
 - Ao menos um comentário POSITIVO sobre o filme (comentário que deu uma nota >= 5) 
+## Tecnologias utilizadas
+- Java 11
+- Spring boot 5
+- Jsoup 1.14.2
+- Thymeleaf 3
+- BootStrap 5.1.1
