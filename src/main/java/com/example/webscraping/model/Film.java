@@ -2,15 +2,7 @@ package com.example.webscraping.model;
 
 import java.util.List;
 
-public class Filme {
-    public  Filme(){}
-    public  Filme(String name, float note, List<String> directors, List<String> mainCast, List<String> positiveComment){
-        this.name = name;
-        this.note = note;
-        this.directors = directors;
-        this.mainCast = mainCast;
-        this.positiveComment = positiveComment;
-    }
+public class Film {
 
     private String name;
     private float note;

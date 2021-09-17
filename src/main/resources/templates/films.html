@@ -23,8 +23,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="film : ${films}">
-        <td>
+    <tr th:each="film : ${films}" >
+        <td >
             <samp th:text="${film.name}"></samp>
         </td>
         <td >
@@ -36,7 +36,7 @@
         <td>
             <samp th:text="${film.mainCast}"></samp>
         </td>
-        <td>
+        <td >
             <h3><p th:text="${film.titleComment}"></p></h3>
             <samp th:text="${film.positiveComment}"></samp>
         </td>

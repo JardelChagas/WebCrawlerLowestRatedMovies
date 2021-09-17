@@ -1,7 +1,7 @@
 package com.example.webscraping.controller;
 
 import com.example.webscraping.domain.WebScraping;
-import com.example.webscraping.model.Filme;
+import com.example.webscraping.model.Film;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +15,14 @@ import java.util.List;
 @RequestMapping("/film")
 public class FilmController {
     @GetMapping
-    public ModelAndView home() throws IOException {
+    public ModelAndView home(){
+
         WebScraping ws = new WebScraping("https://www.imdb.com/chart/bottom");
-        List<Filme> films = ws.getElements();
+        List<Film> films = ws.getElements();
         ModelAndView mv = new ModelAndView("films");
+
         mv.addObject("films",films);
+
         return mv;
     }
 }
