@@ -10,11 +10,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WebScraping{
+public class WebCrawler {
     private String url;
     private Document doc;
 
-    public WebScraping(String url){
+    public WebCrawler(String url){
         this.url = url;
         this.doc = createNewDoc(this.url);
     }
