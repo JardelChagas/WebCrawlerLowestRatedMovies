@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WebScrapingApplication {
+public class WebCrawlerApplication {
 
     public static void main(String[] args){
-        SpringApplication.run(WebScrapingApplication.class, args);
+        SpringApplication.run(WebCrawlerApplication.class, args);
     }
 
 }
