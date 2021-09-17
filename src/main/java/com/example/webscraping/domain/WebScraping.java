@@ -175,14 +175,24 @@ public class WebScraping{
         d = this.createNewDoc(urlComment);
         Element mainDiv = d.getElementsByClass("lister-item-content").first();
         Element title = mainDiv.getElementsByClass("title").first();
+
         Element content = mainDiv.getElementsByClass("content").first();
 
-        positiveComment.add(content.text());
-        titleComment.add(title.text());
+        Element divNote = mainDiv.getElementsByClass("ipl-ratings-bar").first();
+        Element spanRating = divNote.getElementsByClass("rating-other-user-rating").first();
+        Element rating = spanRating.getElementsByTag("span").get(1);
+        if(Integer.parseInt(rating.text()) >= 5){
+            positiveComment.add(content.text());
+            titleComment.add(title.text());
 
-        t.add(titleComment);
-        t.add(positiveComment);
-        return t;
+            t.add(titleComment);
+            t.add(positiveComment);
+            return t;
+
+        }else
+            return null;
+
+
 
     }
 
