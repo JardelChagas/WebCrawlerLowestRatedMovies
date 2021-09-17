@@ -1,4 +1,4 @@
-# WebScraping Lowest Rated Movies
+# Web crawler lowest rated movies
 - [x] A Lista dos 10 filmes com pior nota no site. A lista pode ser exibida onde preferir (console, arquivo externo, página web), em ordem decrescente de melhor para pior nota, e deve conter as seguintes informações estruturadas:
 - [x] Nome do Filme (deve estar em inglês)
 - [x] Nota (com uma casa decimal)
@@ -13,3 +13,8 @@
 - BootStrap 5.1.1
 
 #### Webcrawler in  https://www.imdb.com/chart/bottom
+
+
+```
+Obrigado pela oportunidade!
+```
